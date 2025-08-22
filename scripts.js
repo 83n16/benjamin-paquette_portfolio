@@ -51,11 +51,7 @@ const imageFolders = {
         { src: './SiteAssets/Media_Library/safety-professional/IMG_2190.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2190.jpg' },
         { src: './SiteAssets/Media_Library/safety-professional/IMG_2251.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2251.jpg' },
         { src: './SiteAssets/Media_Library/safety-professional/IMG_2345.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2345.jpg' },
-        { src: './SiteAssets/Media_Library/safety-professional/IMG_2383.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2383.jpg' },
-        { src: './SiteAssets/Media_Library/safety-professional/IMG_2384.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2384.jpg' },
-        { src: './SiteAssets/Media_Library/safety-professional/IMG_2385.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2385.jpg' },
-        { src: './SiteAssets/Media_Library/safety-professional/IMG_2443.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2443.jpg' },
-        { src: './SiteAssets/Media_Library/safety-professional/IMG_2513.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2513.jpg' }
+        { src: './SiteAssets/Media_Library/safety-professional/IMG_2443.jpg', link: './SiteAssets/Media_Library/safety-professional/IMG_2443.jpg' }
     ],
 
     //this is for any of my video projects and photos of the setup that I use when recording in the studio
