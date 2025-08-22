@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Benjamin Paquette</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px 0; }
+    .btn { display: inline-block; background: #559a37; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background 0.3s; }
+    .btn:hover { background: #559a37; }
+
+    /* Header */
+    header { background: #333; color: #fff; position: fixed; width: 100%; z-index: 1000; }
+    header nav ul { display: flex; list-style: none; }
+    header nav ul li { margin-left: 20px; }
+    header nav ul li a { color: #fff; text-decoration: none; }
+
+    /* Portfolio Page Layout */
+    .portfolio-page { padding: calc(80px + 40px) 20px 80px; max-width: 1200px; margin: 0 auto; flex: 1; }
+
+    details { margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; }
+    summary { padding: 15px; background: #f9f9f9; cursor: pointer; font-size: 1.2rem; font-weight: bold; display: block; }
+        /* Details Animation */
+    details summary {
+        list-style: none;
+    }
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+
+        
+    details summary::after {
+        content: "▼";
+        transition: transform 0.3s ease;
+        display: inline-block;
+        margin-left: 5px;
+    }
+    details[open] summary::after {
+        transform: rotate(0deg);
+    }
+    details:not([open]) summary::after {
+        transform: rotate(90deg);
+    }
+    details[open] .portfolio-content {
+        animation: slideDown 0.5s ease-out;
+    }
+    details:not([open]) .portfolio-content {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    p.body {
+        padding: 15px;
+    }
+
+    p.subtext {
+        font-weight: bold;
+        margin: 0px 0px 10px 0px;
+    }
+
+    /* Smooth expanding content */
+    details .portfolio-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease; }
+    details[open] .portfolio-content { max-height: 1000px; opacity: 1; }
+
+    /* Carousel */
+    .carousel-container { position: relative; width: 100%; margin: 10px 0; padding: 0 30px; }
+    .carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 20px; padding: 10px 0; cursor: grab; }
+    .carousel:active { cursor: grabbing; }
+    .carousel a {display: flex; flex-shrink: 0; width: calc((100% - 40px) / 3); height: 250px; scroll-snap-align: start; position: relative; justify-content: center; align-items: center;}
+    .carousel img { width: 100%; max-height: 250px; object-fit: contain; border-radius: 4px; background: #f5f5f5;}
+    .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; padding: 10px 15px; cursor: pointer; font-size: 18px; z-index: 10; }
+    .carousel-arrow.left { left: 0; } .carousel-arrow.right { right: 0; }
+    .carousel-arrow:hover { background: rgba(0,0,0,0.8); }
+
+    /* Tabs */
+    .tabs { display: flex; border-bottom: 2px solid #ddd; }
+    .tab-btn { flex: 1; padding: 10px; cursor: pointer; text-align: center; background: #f9f9f9; border: none; font-size: 1rem; transition: background 0.3s; }
+    .tab-btn.active { background: #32691a; color: #fff; font-weight: bold; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Responsive */
+    @media (max-width: 768px) { .carousel a { width: calc((100% - 20px) / 2); } }
+    @media (max-width: 480px) { .carousel a { width: 100%; } .carousel { gap: 10px; } .carousel-container { padding: 0 20px; } }
+
+    /* Footer */
+    footer { background: #333; color: #fff; text-align: center; padding: 20px 0; }
+    .social-links { margin-top: 10px; }
+    .social-links a { color: #fff; margin: 0 10px; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Benjamin Paquette</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="portfolio" class="portfolio-page">
+    <p class="subtext">Welcome to my portfolio page. This page contains some examples of my work in my roles working for NYS Parks, Recreation, and Historic Preservation. Please reach out to me directly if you would like to see more of my work or if you need further clarification or examples of specific work.</p>
+    <div class="container">
+      <h2>My Portfolio</h2>
+
+      <details>
+        <summary>Safety Professional</summary>
+        <div class="portfolio-content">
+          <div class="carousel-container">
+            <button class="carousel-arrow left">&#10094;</button>
+            <div class="carousel" data-folder="safety"></div>
+            <button class="carousel-arrow right">&#10095;</button>
+          </div>
+          <p class="body">As a Safety Coordinator for NYS Parks, I'm an instructor for multiple trainings including, Conflict Management, CPR/AED & First Aid, Lifeguarding, and more. I perform a multifaceted role, which includes development of training materials and also support for safety staff.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Videography</summary>
+        <div class="portfolio-content">
+          <div class="carousel-container">
+            <button class="carousel-arrow left">&#10094;</button>
+            <div class="carousel" data-folder="videography"></div>
+            <button class="carousel-arrow right">&#10095;</button>
+          </div>
+          <p class="body">Watch my videography projects here which consist primarily of safety trainings and safety related content.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Graphic & Form Design</summary>
+        <div class="portfolio-content">
+          <!-- Tabs -->
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="graphic">Graphic Design</button>
+            <button class="tab-btn" data-tab="graphic2">Form Design</button>
+          </div>
+
+          <!-- Graphic Design Tab -->
+          <div id="graphic" class="tab-content active">
+            <div class="carousel-container">
+              <button class="carousel-arrow left">&#10094;</button>
+              <div class="carousel" data-folder="graphic"></div>
+              <button class="carousel-arrow right">&#10095;</button>
+            </div>
+            <p class="body">Browse my graphic design work, including posters, certification card templates, and more.</p>
+          </div>
+
+          <!-- Form Design Tab -->
+          <div id="graphic2" class="tab-content">
+            <div class="carousel-container">
+              <button class="carousel-arrow left">&#10094;</button>
+              <div class="carousel" data-folder="graphic2"></div>
+              <button class="carousel-arrow right">&#10095;</button>
+            </div>
+            <p class="body">Browse my form design projects, including safety postings and monthly safety topics.</p>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Professional Photography</summary>
+        <div class="portfolio-content">
+          <div class="carousel-container">
+            <button class="carousel-arrow left">&#10094;</button>
+            <div class="carousel" data-folder="photography"></div>
+            <button class="carousel-arrow right">&#10095;</button>
+          </div>
+          <p class="body">Explore my photography projects, including nature macros, professional headshots, and studio setups.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Benjamin Paquette. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/paquette-benjamin/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts.js"></script>
+</body>
+</html>
