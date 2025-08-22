@@ -57,7 +57,7 @@ header nav ul li a {
 /* Hero Section */
 
 .hero {
-    background:url('./SiteAssets/Media_Library/HeroIMG-01-01-01.png')no-repeat center center/cover;
+    background:url('./SiteAssets/Media_Library/HeroIMG.jpg')no-repeat center center/cover;
     opacity: 80%;
     max-height: 100%;
     max-width: 100%;
