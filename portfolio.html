@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Benjamin Paquette</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+  // Check if the page is accessible
+  fetch(window.location.href, { method: 'HEAD', cache: 'no-store' })
+      .catch(() => {
+      // If the fetch fails, redirect to the backup URL
+      window.location.replace("https://benjamin-paquette-portfolio.pages.dev");
+      });
+  </script>
   <style>
     /* Global Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
